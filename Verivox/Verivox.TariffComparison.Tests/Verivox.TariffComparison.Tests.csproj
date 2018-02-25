@@ -37,6 +37,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Calculation\BasicElectricityTariffCalculationTests.cs" />
+    <Compile Include="Core\Common\ConsumptionCostTests.cs" />
     <Compile Include="Core\Common\ConsumptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
