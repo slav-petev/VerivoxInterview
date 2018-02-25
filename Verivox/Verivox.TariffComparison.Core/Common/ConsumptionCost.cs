@@ -2,8 +2,10 @@
 
 namespace Verivox.TariffComparison.Core.Common
 {
-    public class ConsumptionCost : IEquatable<ConsumptionCost>
+    public class ConsumptionCost : IEquatable<ConsumptionCost>, IComparable<ConsumptionCost>
     {
+        public static ConsumptionCost NONE = new ConsumptionCost(0);
+
         public decimal Value { get; }
 
         private ConsumptionCost(decimal value)
@@ -29,6 +31,11 @@ namespace Verivox.TariffComparison.Core.Common
         public override int GetHashCode()
         {
             return this.Value.GetHashCode();
+        }
+
+        public int CompareTo(ConsumptionCost other)
+        {
+            return this.Value.CompareTo(other.Value);
         }
 
         public override string ToString()
