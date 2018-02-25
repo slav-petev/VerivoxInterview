@@ -42,6 +42,7 @@
     <Compile Include="Core\Calculation\PackagedTariffLowConsumptionCalculationTests.cs" />
     <Compile Include="Core\Common\ConsumptionCostTests.cs" />
     <Compile Include="Core\Common\ConsumptionTests.cs" />
+    <Compile Include="Core\Tariffs\TariffNameTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
