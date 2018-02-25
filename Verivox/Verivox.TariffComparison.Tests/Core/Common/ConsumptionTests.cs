@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
-using Verivox.TariffComparison.Core.Core.Common;
+using Verivox.TariffComparison.Core.Common;
 
 namespace Verivox.TariffComparison.Tests.Core.Common
 {

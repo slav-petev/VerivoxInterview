@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Verivox.TariffComparison.Core.Core.Common
+namespace Verivox.TariffComparison.Core.Common
 {
     public class Consumption : IEquatable<Consumption>
     {
