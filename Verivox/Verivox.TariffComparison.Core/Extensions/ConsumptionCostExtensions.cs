@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Verivox.TariffComparison.Core.Common;
+﻿using Verivox.TariffComparison.Core.Common;
 
 namespace Verivox.TariffComparison.Core.Extensions
 {

@@ -5,21 +5,20 @@ using Verivox.TariffComparison.Core.Common;
 namespace Verivox.TariffComparison.Tests.Core.Calculation
 {
     [TestFixture]
-    public class BasicElectricityTariffCalculationTests
+    public class PackagedTariffHighConsumptionCalculationTests
     {
         [Test]
-        [TestCase(3500, 830)]
-        [TestCase(4500, 1050)]
-        [TestCase(6000, 1380)]
-        [Category("TariffComparison.Core.BasicElectricityTariffCalculation")]
-        public void ShouldCalculateYearlyCostCorrectly(int consumptionValue,
+        [TestCase(4500, 950)]
+        [TestCase(6000, 1400)]
+        [Category("TariffComparison.Core.PackagedTariffHighConsumptionCalculation")]
+        public void ShouldCalculateYearlyCostsCorrectly(int consumptionValue,
             decimal expectedCostValue)
         {
-            Consumption consumption = Consumption.Create(consumptionValue);
-            BasicElectricityTariffCalculation calculation =
-                new BasicElectricityTariffCalculation();
+            PackagedTariffHighConsumptionCalculation calculation =
+                new PackagedTariffHighConsumptionCalculation();
 
             ConsumptionCost expectedCost = ConsumptionCost.Create(expectedCostValue);
+            Consumption consumption = Consumption.Create(consumptionValue);
             ConsumptionCost actualCost = calculation.Calculate(consumption);
 
             Assert.That(expectedCost, Is.EqualTo(actualCost));

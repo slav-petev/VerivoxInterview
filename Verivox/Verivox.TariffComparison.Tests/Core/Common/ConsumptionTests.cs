@@ -75,5 +75,36 @@ namespace Verivox.TariffComparison.Tests.Core.Common
             Assert.That(first.GetHashCode(), Is.Not.EqualTo(
                 second.GetHashCode()));
         }
+
+        [Test]
+        [TestCase(4000, 3500, 500)]
+        [TestCase(1000, 2000, 1000)]
+        [Category("TariffComparison.Core.Consumption")]
+        public void ShouldSubtractConsumptionsCorrectly(int firstValue,
+            int secondValue, int expectedValue)
+        {
+            Consumption first = Consumption.Create(firstValue);
+            Consumption second = Consumption.Create(secondValue);
+
+            Consumption expected = Consumption.Create(expectedValue);
+            Consumption actual = first - second;
+
+            Assert.That(expected, Is.EqualTo(actual));
+        }
+
+        [Test]
+        [Category("TariffComparison.Core.Consumption")]
+        public void ShouldReturnZeroConsumptionWhenSubtractingEqualConsumptions()
+        {
+            const int consumptionValue = 1000;
+
+            Consumption first = Consumption.Create(consumptionValue);
+            Consumption second = Consumption.Create(consumptionValue);
+
+            Consumption expected = Consumption.ZERO;
+            Consumption actual = first - second;
+
+            Assert.That(expected, Is.EqualTo(actual));
+        }
     }
 }
